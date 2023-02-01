@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(path_planning CXX)
+project(path_planning_lib CXX)
 
 include(cmake/StandardProjectSettings.cmake)
 include(cmake/PreventInSourceBuilds.cmake)

@@ -160,7 +160,7 @@ std::tuple<bool, std::vector<Node>> DStarLite::Plan(const Node& start,
   std::vector<Node> path;
   path.push_back(start_);
   grid_[start_.x_][start_.y_] = 4;
-  PrintGrid(grid_);
+  // PrintGrid(grid_);
   auto last = start_;
   Initialize();
   ComputeShortestPath();
@@ -170,7 +170,7 @@ std::tuple<bool, std::vector<Node>> DStarLite::Plan(const Node& start,
       path.clear();
       path.push_back(start);
       path.back().cost_ = -1;
-      std::cout << "The path has been blocked" << '\n';
+      // std::cout << "The path has been blocked" << '\n';
       return {false, path};
     }
     const auto successors = GetSucc(start_);
@@ -184,7 +184,7 @@ std::tuple<bool, std::vector<Node>> DStarLite::Plan(const Node& start,
     path.push_back(start_);
     grid_[start_.x_][start_.y_] = 4;
 
-#ifndef RUN_TESTS
+#ifdef RUN_TESTS
     std::this_thread::sleep_for(std::chrono::milliseconds(pause_time));
 #endif  // RUN_TESTS
 
@@ -196,8 +196,8 @@ std::tuple<bool, std::vector<Node>> DStarLite::Plan(const Node& start,
       }
       ComputeShortestPath();
     }
-    start_.PrintStatus();
-    PrintGrid(grid_);
+    // start_.PrintStatus();
+    // PrintGrid(grid_);
   }
   path[0].id_ = path[0].x_ * n_ + path[0].y_;
   path[0].pid_ = path[0].id_;
