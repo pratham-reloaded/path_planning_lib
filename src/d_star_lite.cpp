@@ -261,7 +261,7 @@ int main() {
   d_star_lite.SetDynamicObstacles(create_random_obstacles,
                                   time_discovered_obstacles);
   const auto [found_path, path_vector] = d_star_lite.Plan(start, goal);
-  PrintPath(path_vector, start, goal, grid);
+  // PrintPath(path_vector, start, goal, grid);
   return 0;
 }
 #endif  // BUILD_INDIVIDUAL
